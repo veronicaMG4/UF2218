@@ -28,7 +28,9 @@
 			  		 required
 			  		 class="form-control mb-2 mr-sm-2"  
 			  		 placeholder="nombre a buscar">			  		 
-			  <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+			  <button type="submit" class="btn btn-primary mb-2">Buscar</button><br>
+			  <button type="submit" class="btn btn-primary mb-2">Listar</button>
+			  <a href=""></a>
 			  
 			</form>
 			
