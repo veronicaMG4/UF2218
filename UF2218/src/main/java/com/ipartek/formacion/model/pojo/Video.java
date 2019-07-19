@@ -39,7 +39,7 @@ public class Video {
 
 	@Override
 	public String toString() {
-		return "Youtube [id=" + id + ", nombre=" + nombre + ", codigo=" + codigo + "]";
+		return "generate to string  [id=" + id + ", nombre=" + nombre + ", codigo=" + codigo + "\n]";
 	}
 	
 }

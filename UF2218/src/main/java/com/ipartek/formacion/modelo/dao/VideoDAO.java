@@ -3,6 +3,7 @@ package com.ipartek.formacion.modelo.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.ipartek.formacion.model.ConnectionManager;
@@ -173,6 +174,30 @@ public class VideoDAO {
 		return rol;
 	}
 */
+
+	public Video getById(int id) {
+		Video video = new Video();
+		String sql = "SELECT `id`, `nombre` , `codigo` FROM `video` WHERE `id` = ?;";
+		try (Connection con = ConnectionManager.getConnection(); PreparedStatement pst = con.prepareStatement(sql)) {
+			pst.setInt(1, id);
+			try (ResultSet rs = pst.executeQuery()) {
+				if (rs.next()) {
+					video = mapper(rs);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return video;
+	}
+	
+	public Video mapper(ResultSet rs) throws SQLException {
+		Video v = new Video();
+		v.setId( rs.getInt("id") );
+		v.setNombre( rs.getString("nombre"));
+		v.setCodigo( rs.getString("codigo"));
+		return v;
+	}
 	
 	
 }
