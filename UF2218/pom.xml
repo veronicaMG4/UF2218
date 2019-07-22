@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ipartek.formacion</groupId>
-	<artifactId>UF2218</artifactId>
+	<artifactId>uf2218</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1</version>
-	<name>UF2218</name>
-	
+	<name>uf2218</name>
+
 
 	<!-- variables comunes para todo el POM -->
 	<properties>
@@ -18,7 +19,7 @@
 		<javax.servlet.jstl.version>1.2</javax.servlet.jstl.version>
 	</properties>
 
-	<!--LIBRERIAS QUE VAMOS A USAR u OTROS PROYECTOS DE MAVEN-->
+	<!-- librerias que vamos a usar u otros proyectos maven -->
 	<dependencies>
 
 		<!-- Web Project 3.0 -->
@@ -26,7 +27,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>${javax.servlet.api}</version>
-			<scope>provided</scope> <!--nos lo provee el servidor de aplicaciones-->
+			<scope>provided</scope>  <!-- Nos lo provee el servidor de aplicaciones -->
 		</dependency>
 
 		<dependency>
@@ -47,7 +48,25 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.44</version>
-			<!-- SI NO EXISTE SCOPE , AL CREAR EL PROYECTO SE INCLUYE LA LIBRERIA-->
+			<!-- Si no existe scope, al crear el proyecto se incluye la libreria -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.16</version>
+		</dependency>
+		
+		 <dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.2.4.Final</version>
 		</dependency>
 
 
@@ -57,7 +76,6 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope> <!-- solo se usa para Test, cuando se crea el projecto no se usa esta libreria -->
-			<!--si  no existe scope// solo se usa para test, cuando se crea el proyecto no se crea esta libreria-->
 		</dependency>
 
 
@@ -97,6 +115,6 @@
 		</plugins>
 
 
-		<finalName>uf2218App</finalName>
+		<finalName>uf2218</finalName>
 	</build>
 </project>
