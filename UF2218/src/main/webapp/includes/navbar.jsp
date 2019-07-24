@@ -1,5 +1,5 @@
-  <link rel="stylesheet" type="text/css" href="vendors/fontawesome-free-5.9.0-web/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="resources/vendors/fontawesome-free-5.9.0-web/css/all.min.css">
+ <%@page import="com.ipartek.formacion.controller.VideoController"%>
+ <link rel="stylesheet" type="text/css" href="resources/vendors/fontawesome-free-5.9.0-web/css/all.min.css">
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
 	  <a class="navbar-brand" href="#">JEE <i class="fab fa-java"></i></a>
 	 
@@ -27,21 +27,25 @@
 	        	<a class="nav-link" href="logout">Logout  <i class="fas fa-door-closed"></i></a>
 	        	<span class="text-white">${usuario}</span>
 	        </c:if>		       
-	      </li>	 	            
+	      </li>	
+	      
+	      <li class="nav-item">
+		      <div class="dropdown">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Videos Visualizados
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				  	<c:forEach items="${videosVistos}" var="vv"> 
+				    	<a class="dropdown-item" href="backoffice/videos?op=<%=VideoController.OP_DETALLE%>&id=${vv.value.id}">(${vv.key}) ${vv.value.nombre}</a>
+				    </c:forEach>				    
+				  </div>
+				</div>
+	      </li>
+	       	            
 	    </ul>	   
 	  </div>
 	  
-	  <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    lista de videos
-  </a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">video1</a>
-    <a class="dropdown-item" href="#">video2</a>
-    <a class="dropdown-item" href="#">video3</a>
-  </div>
-</div>
+	  
 	</nav>
     <!-- end navar -->
     

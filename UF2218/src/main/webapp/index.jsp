@@ -21,6 +21,7 @@
 	<li class="list-group-item"><a href="ejemplos/filtros.jsp">Filtros</a></li>
 	<li class="list-group-item"><a href="ejemplos/listeners.jsp">Listeners o escuchadores de eventos</a></li>
 	<li class="list-group-item"><a href="ejemplos/displayelementos.jsp">display block/inline</a></li>
+	<li class="list-group-item"><a href="ejemplos/calculadora.jsp">Calculadora</a></li>
 </ul>
 </main>
 

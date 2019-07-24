@@ -16,8 +16,7 @@ import javax.servlet.http.HttpSessionListener;
 public class UsuariosLogeadosListener implements HttpSessionListener, HttpSessionAttributeListener {
 
 	
-	public static String nombre = "Variable publica y statica, TODO lo mismo pero para una coleccion";
-	public static ArrayList<String> nombres = new ArrayList();
+	public static ArrayList<String> usuariosLogeados = new ArrayList<String>();
 	
 	
 	
@@ -46,15 +45,27 @@ public class UsuariosLogeadosListener implements HttpSessionListener, HttpSessio
      * @see HttpSessionAttributeListener#attributeAdded(HttpSessionBindingEvent)
      */
     public void attributeAdded(HttpSessionBindingEvent event)  { 
-         // TODO Auto-generated method stub
-    	nombres.add((String) event.getValue());
+        
+    	System.out.println("attributeAdded " + event.getName() );
+    	
+    	if ( "usuario".equals(event.getName()) ) {
+    		usuariosLogeados.add( (String)event.getValue());
+    	}
+    	
+    	
     }
 
 	/**
      * @see HttpSessionAttributeListener#attributeRemoved(HttpSessionBindingEvent)
      */
     public void attributeRemoved(HttpSessionBindingEvent event)  { 
-         // TODO Auto-generated method stub
+         
+    	System.out.println("attributeRemoved " + event.getName() );
+    	
+    	if ( "usuario".equals(event.getName()) ) {
+    		usuariosLogeados.remove( (String)event.getValue());
+    	}
+    	
     }
 
 	/**

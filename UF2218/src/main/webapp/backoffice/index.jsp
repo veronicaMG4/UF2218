@@ -4,10 +4,12 @@
 <%@include file="../includes/navbar.jsp"%> 
 <%@include file="../includes/mensajes.jsp"%>
 
+<meta http-equiv="refresh" content="3">
+
  <h1>BACKOFFICE</h1>
  
  
- <%=UsuariosLogeadosListener.nombres%>
+ <%=UsuariosLogeadosListener.usuariosLogeados%>
 
 
 <%@include file="../includes/footer.jsp"%>

@@ -10,7 +10,7 @@
 		
 			<%@include file="/includes/mensajes.jsp"%>
 			
-			<form action="/backoffice/videos" method="post" class="mb-2">
+			<form action="backoffice/videos" method="post" class="mb-2">
 			
 				<input type="hidden" name="op" value="<%=VideoController.OP_GUARDAR%>">
 			
@@ -57,7 +57,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <form action="/backoffice/videos" method="post">	
+        <form action="backoffice/videos" method="post">	
 					<input type="hidden" name="op" value="<%=VideoController.OP_ELIMINAR%>">
 					<input type="hidden" name="id" value="${video.id}" readonly>			
 					<input type="submit" value="Eliminar" class="btn btn-outline-danger btn-block">	

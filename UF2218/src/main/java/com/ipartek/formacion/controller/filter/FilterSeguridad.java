@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ipartek.formacion.controller.pojo.Alert;
+
 /**
  * Servlet Filter implementation class FilterSeguridad
  */
@@ -55,6 +57,7 @@ public class FilterSeguridad implements Filter {
 			chain.doFilter(request, response);
 		}else {
 			//response redireccionar a login
+			session.setAttribute("mensaje", new Alert("danger", "Por favor inicia session para poder acceder"));
 			res.sendRedirect( req.getContextPath() + "/login.jsp");
 		}	
 	}

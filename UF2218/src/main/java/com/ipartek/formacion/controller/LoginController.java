@@ -44,7 +44,6 @@ public class LoginController extends HttpServlet {
 			
 			session.setAttribute("usuario", "usuario"+request.getRemoteAddr() );
 			
-			
 			request.setAttribute("mensaje", new Alert("success","Ongi Etorri " + usuario ) );
 			
 			String callback = (String) session.getAttribute("callback");
