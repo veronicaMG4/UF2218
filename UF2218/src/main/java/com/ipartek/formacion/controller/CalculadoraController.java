@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ipartek.formacion.controller.pojo.Alert;
 import com.ipartek.formacion.model.dao.VideoDAO;
 
 /**
@@ -61,7 +62,7 @@ public class CalculadoraController extends HttpServlet {
 		
 		 opcion = request.getParameter("op");
 		
-		
+		try {
 		switch (opcion) {
 		case OP_SUMAR:
 			sumar(request, response);
@@ -83,10 +84,16 @@ public class CalculadoraController extends HttpServlet {
 			sumar(request, response);
 			break;
 		}
+		}catch(Exception e){
+			System.out.println("por favor introduce numeros");
+			request.setAttribute("mensaje", new Alert("danger", "Por favor escribe numeros"));
+			
+		}finally {
 		
 		request.setAttribute("resul", resultado);
 		request.setAttribute("opc", opcion);
 		request.getRequestDispatcher("ejemplos/calculadora.jsp").forward(request, response);
+	}
 	}
 	
 	private void sumar(HttpServletRequest request, HttpServletResponse response) {

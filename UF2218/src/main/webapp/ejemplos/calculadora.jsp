@@ -1,5 +1,6 @@
 <%@include file="../includes/header.jsp" %>
 <%@include file="../includes/navbar.jsp" %>
+<%@include file="../includes/mensajes.jsp"%>
    
   	<!-- necesito una base href para que funcione qu esta en el header -->
     <form action="calcular" method="post">

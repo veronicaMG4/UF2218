@@ -6,6 +6,8 @@
 
 <br>
 <h2 class="text-secondary">Lista de ejercicios de ejemplo</h2>
+<p class="h3 text-danger"><fmt:message key="menu.ejemplos" /></p>
+	<p class="h3 text-danger"><fmt:message key="menu.inicio" /></p>
 <ul class="list-group text-warning">
 	<li class="list-group-item"><a href="ejemplos/basico.jsp">Ejemplo Servlet basico sin jsp</a></li>
 	<li class="list-group-item"><a href="ejemplos/basico2.jsp">Ejemplo Servlet basico con jsp</a></li>
@@ -22,6 +24,7 @@
 	<li class="list-group-item"><a href="ejemplos/listeners.jsp">Listeners o escuchadores de eventos</a></li>
 	<li class="list-group-item"><a href="ejemplos/displayelementos.jsp">display block/inline</a></li>
 	<li class="list-group-item"><a href="ejemplos/calculadora.jsp">Calculadora</a></li>
+	<li class="list-group-item"><a href="i18n">i18n-multi-idioma</a></li>
 </ul>
 </main>
 
